@@ -16,12 +16,7 @@ public class UserValidatorTest {
         UserValidator validator = new UserValidator();
         boolean result = validator.validateFirstName("Nikh@il");
         Assert.assertEquals(true, result);
-    }
-    @Test
-    public void giveFirstName_WhenSpecialChar_ShouldReturnFalse() {
-        UserValidator validator = new UserValidator();
-        boolean result = validator.validateFirstName("Nikh@il");
-        Assert.assertEquals(false, result);
+
     }
 
     @Test
