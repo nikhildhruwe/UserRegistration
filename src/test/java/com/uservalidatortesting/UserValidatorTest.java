@@ -32,4 +32,5 @@ public class UserValidatorTest {
         boolean result = validator.validateLastName("Dh");
         Assert.assertEquals(false, result);
     }
+
 }
