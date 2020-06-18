@@ -61,16 +61,16 @@ public class UserValidatorTest {
     }
 
     @Test
-    public void givePassword_When8MinimumCharacters_ShouldReturnTrue() {
+    public void givePassword_When8MinimumCharAndAtleast1UpperCase_ShouldReturnTrue() {
         UserValidator validator = new UserValidator();
-        boolean result = validator.validatePassword("esse#fqwq1");
+        boolean result = validator.validatePassword("esAseqwq1");
         Assert.assertEquals(true, result);
     }
 
     @Test
     public void givePassword_WhenLessThan8Characters_ShouldReturnfalse() {
         UserValidator validator = new UserValidator();
-        boolean result = validator.validatePassword("abcd12");
+        boolean result = validator.validatePassword("ab3eqcd12");
         Assert.assertEquals(false, result);
     }
 
