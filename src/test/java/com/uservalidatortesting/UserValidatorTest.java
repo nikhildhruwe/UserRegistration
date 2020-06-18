@@ -70,7 +70,7 @@ public class UserValidatorTest {
     @Test
     public void givePassword_WhenNoUpperCase_ShouldReturnfalse() {
         UserValidator validator = new UserValidator();
-        boolean result = validator.validatePassword("ab3eqcd12");
+        boolean result = validator.validatePassword( "ab3eqcd12");
         Assert.assertEquals(false, result);
     }
 
