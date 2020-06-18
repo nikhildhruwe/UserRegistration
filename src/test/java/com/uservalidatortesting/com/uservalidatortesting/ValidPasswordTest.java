@@ -28,7 +28,7 @@ public class ValidPasswordTest {
                 {"abcd@A123", true,},
                 {"acdeefgh", false},
                 {"abc123@", false},
-                {"123a", false},
+                {"123a",  false},
                 {"abcdefA@", false},
         });
     }
