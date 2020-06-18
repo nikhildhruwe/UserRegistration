@@ -68,7 +68,7 @@ public class UserValidatorTest {
     }
 
     @Test
-    public void givePassword_WhenLessThan8Characters_ShouldReturnfalse() {
+    public void givePassword_WhenNoUpperCase_ShouldReturnfalse() {
         UserValidator validator = new UserValidator();
         boolean result = validator.validatePassword("ab3eqcd12");
         Assert.assertEquals(false, result);
