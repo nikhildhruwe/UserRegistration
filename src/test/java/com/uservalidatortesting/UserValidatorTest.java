@@ -59,4 +59,20 @@ public class UserValidatorTest {
         boolean result = validator.validatePhoneNumber("a987654321");
         Assert.assertEquals(false, result);
     }
+
+    @Test
+    public void givePassword_When8MinimumCharacters_ShouldReturnTrue() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.validatePassword("esse#fqwq1");
+        Assert.assertEquals(true, result);
+    }
+
+    @Test
+    public void givePassword_WhenLessThan8Characters_ShouldReturnfalse() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.validatePassword("abcd12");
+        Assert.assertEquals(false, result);
+    }
+
+
 }

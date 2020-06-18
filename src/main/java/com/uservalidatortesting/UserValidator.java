@@ -12,6 +12,7 @@ public class UserValidator {
                                                 "@([0-9a-zA-Z][-]?)+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$";
     private static final String MOBILE_PATTERN="[0-9]{2}[ |-]?[0-9]{10}$";
 
+
     public boolean validateFirstName(String fname) {
         Pattern pattern=Pattern.compile(FIRST_NAME_PATTERN);
         return pattern.matcher(fname).matches();
@@ -37,4 +38,9 @@ public class UserValidator {
         return matcher.matches();
     }
 
+    public boolean validatePassword(String password) {
+        Pattern pattern = Pattern.compile("[a-zA-z0-9@#$%]{8,}$");
+        Matcher matcher = pattern.matcher(password);
+        return matcher.matches();
+    }
 }
