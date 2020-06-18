@@ -60,19 +60,5 @@ public class UserValidatorTest {
         Assert.assertEquals(false, result);
     }
 
-    @Test
-    public void givePassword_WhenAtleast1SpecialChar_ShouldReturnTrue() {
-        UserValidator validator = new UserValidator();
-        boolean result = validator.validatePassword("e1A@eqwqqw");
-        Assert.assertEquals(true, result);
-    }
-
-    @Test
-    public void givePassword_WhenNoSpecialCharacter_ShouldReturnfalse() {
-        UserValidator validator = new UserValidator();
-        boolean result = validator.validatePassword("abAeqcdq");
-        Assert.assertEquals(false, result);
-    }
-
 
 }
