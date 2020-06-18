@@ -49,7 +49,7 @@ public class UserValidatorTest {
     @Test
     public void givePhoneNumber_When10DigitsNotProivded_ShouldReturnFalse() {
         UserValidator validator = new UserValidator();
-        boolean result = validator.validatePhoneNumber("98765432");
+        boolean result = validator.validatePhoneNumber( "98765432");
         Assert.assertEquals(false, result);
     }
 
