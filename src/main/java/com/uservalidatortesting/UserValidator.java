@@ -39,7 +39,7 @@ public class UserValidator {
     }
 
     public boolean validatePassword(String password) {
-        Pattern pattern = Pattern.compile("((?=.*[A-Z])(?=.*\\d)(?=.*[a-z@#$%]).{8,}$)");
+        Pattern pattern = Pattern.compile("((?=.*[A-Z])(?=.*\\d)(?=.*[@#$%*])(?=.*[a-z]?).{8,})$");
         Matcher matcher = pattern.matcher(password);
         return matcher.matches();
     }
