@@ -15,7 +15,22 @@ public class UserValidatorTest {
     public void giveFirstName_WhenSpecialChar_ShouldReturnFalse() {
         UserValidator validator = new UserValidator();
         boolean result = validator.validateFirstName("Nikh@il");
-        Assert.assertEquals(true, result);
+        Assert.assertEquals(false, result);
+
+    }
+
+    @Test
+    public void giveFirstName_WhenLessThanThreeChar_ShouldReturnFalse() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.validateFirstName("Ni");
+        Assert.assertEquals(false, result);
+
+    }
+    @Test
+    public void giveFirstName_WhenStartingCharIsSmall_ShouldReturnFalse() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.validateFirstName("nikhil");
+        Assert.assertEquals(false, result);
 
     }
 
