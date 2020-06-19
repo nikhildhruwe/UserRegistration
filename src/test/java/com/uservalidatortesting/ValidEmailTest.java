@@ -32,7 +32,7 @@ public class ValidEmailTest {
                 {"abc@1.com", true},
                 {"abc@gmail.com.com", true},
                 {"abc+100@gmail.com",true},
-               {"abc", false},
+                {"abc", false},
                 {"abc@.com.my", false},
                 {"abc123@gmail.a", false},
                 {"abc123@.com", false},
@@ -47,11 +47,11 @@ public class ValidEmailTest {
         });
     }
 
+    // Test Case for Email Address
     @Test
     public void givenEmailAsVar_ShouldReturnAsPerParametrizedResult() {
         UserValidator validator = new UserValidator();
         boolean result=validator.validateEmailAdress(this.email2Test);
         Assert.assertEquals(this.expectedResult,result);
-
     }
 }

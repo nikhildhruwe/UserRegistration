@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class UserValidatorTest {
+    // Test Cases for First Name
     @Test
     public void giveFirstName_WhenProper_ShouldReturnTrue() {
         UserValidator validator = new UserValidator();
@@ -16,7 +17,6 @@ public class UserValidatorTest {
         UserValidator validator = new UserValidator();
         boolean result = validator.validateFirstName("Nikh@il");
         Assert.assertEquals(false, result);
-
     }
 
     @Test
@@ -24,16 +24,16 @@ public class UserValidatorTest {
         UserValidator validator = new UserValidator();
         boolean result = validator.validateFirstName("Ni");
         Assert.assertEquals(false, result);
-
     }
+
     @Test
     public void giveFirstName_WhenStartingCharIsSmall_ShouldReturnFalse() {
         UserValidator validator = new UserValidator();
         boolean result = validator.validateFirstName("nikhil");
         Assert.assertEquals(false, result);
-
     }
 
+    // Test Cases for Last Name
     @Test
     public void giveLastName_WhenProper_ShouldReturnTrue() {
         UserValidator validator = new UserValidator();
@@ -49,6 +49,14 @@ public class UserValidatorTest {
     }
 
     @Test
+    public void giveLastName_WhenNumericProvided_ShouldReturnFalse() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.validateLastName("Dhruwe123");
+        Assert.assertEquals(false, result);
+    }
+
+    //Test Cases for Phone Number
+    @Test
     public void givePhoneNumber_WhenProperWithCode_ShouldReturnTrue() {
         UserValidator validator = new UserValidator();
         boolean result = validator.validatePhoneNumber("90 9876543210");
@@ -61,6 +69,7 @@ public class UserValidatorTest {
         boolean result = validator.validatePhoneNumber("90-9876543210");
         Assert.assertEquals(true, result);
     }
+
     @Test
     public void givePhoneNumber_When10DigitsNotProivded_ShouldReturnFalse() {
         UserValidator validator = new UserValidator();
@@ -74,6 +83,4 @@ public class UserValidatorTest {
         boolean result = validator.validatePhoneNumber("a987654321");
         Assert.assertEquals(false, result);
     }
-
-
 }
